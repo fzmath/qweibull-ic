@@ -1,0 +1,22 @@
+Dear Editor,
+
+We are pleased to submit our manuscript entitled "Practical identifiability of the q-Weibull tail parameter in reliability and survival analysis: confounding with gamma frailty under interval censoring" for consideration in the Applied Stochastic Models in Business and Industry.
+
+The q-Weibull distribution is increasingly used in reliability engineering to model lifetime data with heavier-than-Weibull tails or bounded support. However, when data are interval-censored (common in reliability testing and periodic inspection), the tail parameter q is poorly identified. We show that the q-Weibull model and the Weibull-gamma frailty model produce nearly identical survival curves over the observed range, making them practically indistinguishable.
+
+Our contributions are:
+1. A mathematical analysis showing the two models belong to the same power-law family.
+2. A Fisher information analysis quantifying the weak identification of q under interval censoring.
+3. A likelihood ratio test with demonstrated size and power.
+4. A practical diagnostic framework for reliability practitioners.
+
+We apply our methods to three real interval-censored datasets from dental research, epidemiology, and preclinical cancer research.
+
+We believe this paper fits the scope of Applied Stochastic Models in Business and Industry because it addresses a practical problem in reliability engineering (model selection under interval censoring) with real data applications and provides actionable guidance for practitioners.
+
+This manuscript has not been published elsewhere and is not under consideration by another journal. All authors have approved the submission.
+
+Sincerely,
+Huirong Cao
+College of Science, Langfang Normal University
+Email: huirongcao@126.com

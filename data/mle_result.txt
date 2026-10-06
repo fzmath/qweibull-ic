@@ -1,0 +1,3 @@
+q-Weibull MLE: q=1.348, lam=0.00003, beta=6.298, nll=5576.68
+Weibull(q=1):   lam=0.00008, beta=5.295, nll=5596.99
+LR test (q=1): 2*(nll_W - nll_q) = 40.60  (拒绝q=1)

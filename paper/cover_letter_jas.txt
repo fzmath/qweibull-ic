@@ -1,0 +1,22 @@
+Dear Editor,
+
+We are pleased to submit our manuscript entitled "Is the q-Weibull tail parameter identifiable under interval censoring? A diagnostic comparison with gamma frailty and a likelihood ratio test" for consideration in the Journal of Applied Statistics.
+
+The q-Weibull distribution is increasingly used in reliability and survival analysis to model lifetime data with heavier-than-Weibull tails or bounded support. However, when data are interval-censored (as in periodic follow-up studies), the tail parameter q is poorly identified. We show that the q-Weibull model with q>1 is mathematically indistinguishable from the Weibull-gamma frailty model, which is a standard model for unobserved heterogeneity.
+
+Our contributions are:
+1. A mathematical analysis showing the two models belong to the same power-law family.
+2. A Fisher information analysis quantifying the weak identification of q under interval censoring.
+3. A likelihood ratio test with demonstrated size and power via simulation.
+4. A practical diagnostic framework for practitioners.
+
+We apply our methods to three real interval-censored datasets from dental research, epidemiology, and preclinical cancer research.
+
+We believe this paper fits the scope of the Journal of Applied Statistics because it addresses a practical problem (model selection under interval censoring) with real data applications and provides actionable guidance for practitioners.
+
+This manuscript has not been published elsewhere and is not under consideration by another journal. All authors have approved the submission.
+
+Sincerely,
+Huirong Cao
+College of Science, Langfang Normal University
+Email: huirongcao@126.com

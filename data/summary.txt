@@ -1,0 +1,8 @@
+shape=(4386, 6)
+interval=2775 right_censored=1611
+left=[1.10,7.40]
+right=[2.60,7.40]
+girls=51.9%
+dmf_pos=57.0%
+by_girl: interval=1334, rcens=944
+by_boy: interval=1441, rcens=667

@@ -1,0 +1,110 @@
+﻿xelatex : Qt: Untested Windows version 6.2 detected!
+所在位置 行:1 字符: 37
++ ... 261005\paper"; xelatex -interaction=nonstopmode main.tex 2>&1 | Out-F ...
++                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Qt: Untested Wi...n 6.2 detected!:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9)
+entering extended mode
+(G:\OPT\JSCS-WFC20261005\paper\main.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for loaded.
+(C:\CTEX\MiKTeX\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(C:\CTEX\MiKTeX\tex\latex\base\size12.clo))
+(C:\CTEX\MiKTeX\tex\latex\geometry\geometry.sty
+(C:\CTEX\MiKTeX\tex\latex\graphics\keyval.sty)
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\ifpdf.sty)
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\ifvtex.sty)
+(C:\CTEX\MiKTeX\tex\generic\ifxetex\ifxetex.sty)
+(C:\CTEX\MiKTeX\tex\xelatex\xetexconfig\geometry.cfg))
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty))
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty)
+(C:\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty))
+(C:\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
+(C:\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty))
+(C:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+(C:\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
+(C:\CTEX\MiKTeX\tex\latex\graphics\trig.sty)
+(C:\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg)
+(C:\CTEX\MiKTeX\tex\xelatex\xetex-def\xetex.def)))
+(C:\CTEX\MiKTeX\tex\latex\booktabs\booktabs.sty)
+(C:\CTEX\MiKTeX\tex\latex\natbib\natbib.sty)
+(C:\CTEX\MiKTeX\tex\latex\hyperref\hyperref.sty
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\hobsub-hyperref.sty
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\hobsub-generic.sty))
+(C:\CTEX\MiKTeX\tex\latex\oberdiek\kvoptions.sty)
+(C:\CTEX\MiKTeX\tex\latex\hyperref\pd1enc.def)
+(C:\CTEX\MiKTeX\tex\latex\00miktex\hyperref.cfg)
+(C:\CTEX\MiKTeX\tex\xelatex\xetexurl\url.sty))
+
+Package hyperref Message: Driver (autodetected): hxetex.
+
+(C:\CTEX\MiKTeX\tex\latex\hyperref\hxetex.def
+(C:\CTEX\MiKTeX\tex\latex\hyperref\puenc.def)
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\stringenc.sty)
+(C:\CTEX\MiKTeX\tex\latex\oberdiek\rerunfilecheck.sty))
+(C:\CTEX\MiKTeX\tex\latex\setspace\setspace.sty)
+(G:\OPT\JSCS-WFC20261005\paper\main.aux)
+*geometry* detected driver: pdftex
+(C:\CTEX\MiKTeX\tex\latex\hyperref\nameref.sty
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\gettitlestring.sty))
+(G:\OPT\JSCS-WFC20261005\paper\main.out)
+(G:\OPT\JSCS-WFC20261005\paper\main.out)
+(C:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd)
+(C:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd)
+Overfull \hbox (53.6564pt too wide) in paragraph at lines 21--21
+ [][] 
+(C:\CTEX\MiKTeX\tex\generic\oberdiek\se-ascii-print.def) [1] [2] [3] [4]
+<use  "fig1_survival.pdf" > [5] (C:\CTEX\MiKTeX\tex\latex\base\omscmr.fd)
+<use  "fig2_confounding.pdf" > [6] <use  "fig3_hazard.pdf" > [7]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 257.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 257.
+
+[8]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 278.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 278.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 297.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 297.
+
+[9]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 345.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 345.
+
+[10]
+Overfull \hbox (8.3766pt too wide) in paragraph at lines 372--384
+ [][] 
+
+Overfull \hbox (28.78766pt too wide) in paragraph at lines 391--392
+\OT1/cmr/m/n/10.95 The anal-y-sis code and pro-cessed dataset-s are avail-able 
+at []$\OT1/cmtt/m/n/10.95 https : / / github . com / fzmath / qweibull-[]ic$[]\
+OT1/cmr/m/n/10.95 .
+[11] [12] [13] (G:\OPT\JSCS-WFC20261005\paper\main.aux) )
+(see the transcript file for additional information)
+Output written on main.pdf (13 pages).
+Transcript written on main.log.
