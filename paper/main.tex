@@ -8,11 +8,11 @@
 \usepackage{setspace}
 \onehalfspacing
 
-\title{Practical identifiability of the q-Weibull tail parameter in reliability and survival analysis: confounding with gamma frailty under interval censoring}
+\title{Diagnosing q-Weibull tail deformation versus gamma frailty under interval censoring: a computational study}
 
-\author{Huirong Cao$^{1}$\thanks{Corresponding author: huirongcao@126.com} and Fuchang Wang$^{2}$\\
-$^{1}$School of Sciences, Langfang Normal University, Langfang, China\\
-$^{2}$School of Emergency Management, China University of Mining and Technology}
+\author{\small Huirong Cao$^{1}$\thanks{\small Corresponding author: huirongcao@126.com} and Fuchang Wang$^{2}$\\
+\small $^{1}$School of Sciences, Langfang Normal University, Langfang, China\\
+\small $^{2}$School of Emergency Management, China University of Mining and Technology}
 
 \date{}
 
@@ -20,7 +20,7 @@ $^{2}$School of Emergency Management, China University of Mining and Technology}
 \maketitle
 
 \begin{abstract}
-The q-Weibull distribution is increasingly used in reliability engineering to model lifetimes with heavier-than-Weibull tails or bounded support. Under interval censoring (common in reliability testing and periodic inspection), the tail parameter $q$ is poorly identified. We show that the q-Weibull and Weibull-gamma frailty models produce nearly identical survival curves over the observed range, making them practically indistinguishable. Fisher information analysis shows that $q$ retains only 7\% independent information after profiling out scale and shape. We propose a likelihood ratio test for $H_0: q=1$; simulations show near-nominal size and increasing power with sample size. In 200-replication simulations, frailty-generated data yield $\hat q>1$ and q-Weibull-generated data yield $\hat\theta>0$. Three interval-censored datasets confirm the confounding. We provide a diagnostic framework for reliability practitioners.
+The q-Weibull model provides a flexible parametric representation of lifetime distributions with departures from the standard Weibull tail. However, under interval censoring, an estimated $q>1$ may be difficult to interpret because unobserved heterogeneity can produce a similar marginal survival pattern. This paper investigates the practical distinguishability of q-Weibull tail deformation and Weibull models with gamma frailty using interval-censored data. Although the two models are not mathematically identical, their survival and hazard functions can be very close over the range supported by the observed intervals. We quantify this confounding using Fisher-information diagnostics, likelihood comparisons, and a systematic simulation study. The simulations demonstrate bidirectional confounding: frailty-generated data can yield substantially positive estimates of $q$, whereas q-Weibull-generated data can produce positive estimates of the frailty variance. We further investigate the effects of sample size, interval width, and censoring mechanism, and examine the calibration and power of likelihood-based tests. Applications to three interval-censored datasets show that q-Weibull and gamma-frailty models can provide virtually identical likelihood fits when $q>1$, whereas bounded-support estimates with $q<1$ exhibit a qualitatively different pattern. These results motivate a practical diagnostic framework for distinguishing tail deformation from unobserved heterogeneity in interval-censored reliability and survival data.
 
 \vspace{1em}\noindent\textbf{Keywords:} q-Weibull; frailty; interval censoring; reliability engineering; likelihood ratio test; survival analysis
 \end{abstract}
@@ -35,12 +35,12 @@ Frailty models \citep{vaupel1979frailty} are a cornerstone of survival analysis.
 
 Interval-censored survival data arise when the event time is only known to fall in $(L_i, R_i]$ determined by periodic examinations. This design is ubiquitous: dental studies (annual checkups), cancer screening (irregular follow-up), and industrial reliability (scheduled inspections). Parametric interval-censored models are supported by R packages such as \texttt{icenReg} \citep{icenReg} and \texttt{straweib} \citep{straweib}. The interval censoring further reduces information about the tail, because the exact event time is not observed---only which interval it falls in. This makes the identifiability problem worse than in the right-censored setting.
 
-This paper systematically examines whether the q-Weibull tail parameter $q$ is identifiable under interval censoring, relative to the Weibull-gamma frailty model. Our contributions are:
+This paper systematically examines whether the q-Weibull tail parameter $q$ is practically distinguishable from the Weibull-gamma frailty model under interval censoring. Our contributions are:
 \begin{enumerate}
 \item \emph{Mathematical analysis}: We show that the q-Weibull and Weibull-gamma frailty survival functions belong to the same power-law family and can be numerically nearly identical over the observed range under interval censoring.
 \item \emph{Simulation}: We demonstrate bidirectional confounding and evaluate the size and power of a likelihood ratio test for $q\neq1$.
 \item \emph{Real data}: We confirm the equivalence on three interval-censored datasets across dental, epidemiological, and preclinical domains.
-\item \emph{Practical guidance}: We identify regimes where $q$ is identifiable ($q<1$ bounded support, large $n$, clustered data) and provide a diagnostic decision framework.
+\item \emph{Practical guidance}: We identify regimes where $q$ may be more readily distinguishable from frailty ($q<1$ bounded support, larger $n$, clustered data) and provide a diagnostic decision framework.
 \end{enumerate}
 
 The remainder of the paper is organized as follows. Section~2 presents the two models and their mathematical relationship. Section~3 reports the simulation study. Section~4 applies the models to three real datasets. Section~5 discusses practical recommendations and limitations.
@@ -57,7 +57,7 @@ with density
 \begin{equation}
 f_q(t) = (2-q)\beta\lambda t^{\beta-1}\left[1-(1-q)\lambda t^\beta\right]^{1/(1-q)}.
 \end{equation}
-The three parameters are: scale $\lambda>0$, shape $\beta>0$, and deformation $q$. When $q\to 1$, $S_q(t)\to\exp(-\lambda t^\beta)$, recovering the standard Weibull. For $q<1$, the support is bounded above at $T_{\max}=[(1-q)\lambda]^{-1/\beta}$. For $q>1$, the support is unbounded and the tail decays as a power law: $S_q(t)\sim t^{-\beta(q-2)/(q-1)}$.
+The three parameters are: scale $\lambda>0$, shape $\beta>0$, and deformation $q$. When $q\to 1$, $S_q(t)\to\exp(-\lambda t^\beta)$, recovering the standard Weibull. For $q<1$, the support is bounded above at $T_{\max}=[(1-q)\lambda]^{-1/\beta}$. Throughout this paper, the heavy-tailed q-Weibull regime is restricted to $1<q<2$, where the support is unbounded and the tail decays as a power law: $S_q(t)\sim C\,t^{-\beta(2-q)/(q-1)}$ for some constant $C$.
 
 \subsection{Weibull with gamma frailty}
 
@@ -78,6 +78,18 @@ The frailty survival is
 S_f(t) = \left[1+\theta\lambda t^\beta\right]^{-1/\theta}.
 \end{equation}
 The two exponents are equal only if $1-1/\delta = -1/\theta$ and $\delta=\theta$, which has no solution. The models are therefore \emph{not} mathematically identical. However, over the central range of $t$ that is typically observed in interval-censored studies, the two survival curves can be very close: by adjusting $\lambda$, the two models can approximate each other over the data-supported range (Figure~\ref{fig:survival}), with differences appearing only in the far tail. Under interval censoring, the likelihood depends only on $S(L_i)-S(R_i)$, which further reduces the ability to detect tail differences.
+
+\subsection{Interval-censored likelihood}
+
+For interval-censored observations where the event time $T_i$ is known to fall in $(L_i, R_i]$, the likelihood contribution is
+\begin{equation}
+P(L_i < T_i \le R_i) = F(R_i) - F(L_i) = S(L_i) - S(R_i).
+\end{equation}
+For right-censored observations ($T_i > L_i$ only), the contribution is $S(L_i)$. The full log-likelihood is
+\begin{equation}
+\ell(\theta) = \sum_{i \in \mathcal{I}} \log[S(L_i;\theta) - S(R_i;\theta)] + \sum_{i \in \mathcal{R}} \log S(L_i;\theta),
+\end{equation}
+where $\mathcal{I}$ indexes interval-censored observations and $\mathcal{R}$ indexes right-censored observations. This likelihood structure is central to the identifiability problem: because it depends only on the survival function evaluated at the inspection endpoints, models that differ in the far tail but agree on the observed interval grid can yield nearly identical likelihoods.
 
 \subsection{Fisher information analysis}
 
@@ -180,7 +192,7 @@ $\theta_{\text{true}}$ & $\hat q$ & $q_{\text{true}}$ & $\hat\theta$ \\
 
 \subsection{Identifiability boundary}
 
-We vary interval width $w\in\{0.5,1,2,3\}$ years and sample size $n\in\{200,500,1000\}$ (true $q=1.35$). The RMSE is dominated by $n$ rather than interval width: wider intervals do not materially worsen estimation once $n$ is large. At $n=5000$, the two models become distinguishable (log-likelihood gap $\approx 372$), driven by differences in hazard shape: the q-Weibull hazard rises and then declines, while the frailty marginal hazard declines more gradually (Figure~\ref{fig:hazard}).
+We vary interval width $w\in\{0.5,1,2,3\}$ years and sample size $n\in\{200,500,1000\}$ (true $q=1.35$). The RMSE is dominated by $n$ rather than interval width: wider intervals do not materially worsen estimation once $n$ is large. Under the parameter configuration considered here, increasing the sample size to $n=5000$ substantially improves the likelihood-based separation between the two models (log-likelihood gap $\approx 372$), driven by differences in hazard shape: the q-Weibull hazard rises and then declines, while the frailty marginal hazard declines more gradually (Figure~\ref{fig:hazard}). This should not be interpreted as a universal sample-size threshold.
 
 We also compare right-censored versus interval-censored data at $n=1000$ (true $q=1.2$). Under right censoring, the bias is $+0.010$ and RMSE is $0.065$; under interval censoring, bias is $+0.068$ and RMSE is $0.099$. Interval censoring increases RMSE by approximately 52\%, confirming that the loss of exact event times degrades estimation of the tail parameter.
 
@@ -244,7 +256,7 @@ q=0.7, n=500 & 0.41 $\pm$ 0.19 & 8.70 & 0.840 \\
 \label{tab:lrt}
 \end{table}
 
-The size is close to the nominal 5\% (7.0\% at n=200, 3.0\% at n=500). Power increases with sample size and with deviation from $q=1$. At n=500 and q=0.7, power reaches 84\%. We also verified the size via parametric bootstrap (B=50, R=50): both the asymptotic $\chi^2$ reference and the bootstrap give a conservative size of $\approx 0.02$, below the nominal 0.05. We note that $q=1$ is a non-regular boundary point (the model structure changes at $q=1$), so the asymptotic $\chi^2_1$ approximation may be imperfect; the bootstrap provides a more reliable reference. This test detects any deviation from the Weibull, whether in the direction of bounded support ($q<1$) or heavy tails ($q>1$); it does not distinguish between the two directions or between $q>1$ and frailty.
+The size is close to the nominal 5\% (7.0\% at n=200, 3.0\% at n=500). Power increases with sample size and with deviation from $q=1$. At n=500 and q=0.7, power reaches 84\%. We also verified the size via parametric bootstrap (B=50, R=50): both the asymptotic $\chi^2$ reference and the bootstrap give a conservative size of $\approx 0.02$, below the nominal 0.05. Although the q-Weibull converges continuously to the Weibull model as $q\to1$, the finite-sample behavior of the likelihood ratio statistic may deviate from its nominal asymptotic approximation because the support and curvature of the likelihood change across the $q=1$ transition. We therefore assess the null distribution by parametric bootstrap. This test detects any deviation from the Weibull, whether in the direction of bounded support ($q<1$) or heavy tails ($q>1$); it does not distinguish between the two directions or between $q>1$ and frailty.
 
 \subsection{Clustered data diagnostic}
 
@@ -296,7 +308,7 @@ Weibull+frailty ($\hat\theta=0.54$) & 3 & 4740.4 & 9486.7 \\
 
 \subsection{Mouse tumour latency ($n=144$)}
 
-The miceData dataset from \texttt{icenReg} contains interval-censored tumour onset times for 144 mice. Here the q-Weibull estimates $\hat q=0.67$ (bounded support), and the frailty variance collapses to $\hat\theta\approx 0.01$ (Table~\ref{tab:mice}). This is the expected pattern: bounded $q<1$ is not confounded with frailty.
+The miceData dataset from \texttt{icenReg} contains interval-censored tumour onset times for 144 mice. Here the q-Weibull estimates $\hat q=0.67$ (bounded support), and the frailty variance collapses to $\hat\theta\approx 0.01$ (Table~\ref{tab:mice}). This is the expected pattern: bounded $q<1$ is not confounded with frailty, since frailty always produces an unbounded tail.
 
 \begin{table}[ht]
 \centering
@@ -334,7 +346,7 @@ Mouse tumour & 144 & 0.67 & $\approx$0.01 & 83.0 = 83.0 (no improvement) \\
 
 For the tooth data ($n=4386$), the Weibull baseline has $nll=5597.0$. The q-Weibull improves this to $nll=5576.7$, giving a likelihood ratio test statistic of $\mathrm{LRT}=2(5597.0-5576.7)=40.6$ on 1 degree of freedom ($p<0.001$). However, the frailty model achieves the identical $nll=5576.7$, so the LRT comparing q-Weibull to frailty is exactly zero. The same pattern holds for the diabetes data: $\mathrm{LRT}_{\text{Weibull vs qW}}=56.6$ ($p<0.001$), but $\mathrm{LRT}_{\text{qW vs frailty}}=0.00$. For the mouse data ($\hat q=0.67<1$), the frailty variance collapses to $\hat\theta\approx0.01$, and all three models achieve $nll=83.0$.
 
-These LRT results are the central empirical finding: when $q>1$, either the q-Weibull or the frailty model provides a significant improvement over the Weibull, but the data cannot choose between them. The LRT statistic is not a test of ``is $q\neq1$''---it is a test of ``is the tail heavier than exponential,'' which both $q>1$ and $\theta>0$ produce.
+These LRT results are the central empirical finding: when $q>1$, either the q-Weibull or the frailty model provides a significant improvement over the Weibull, but the data cannot choose between them. The likelihood ratio test assesses departure from the standard Weibull model; it does not identify whether such departure is caused by q-Weibull deformation or unobserved frailty.
 
 \section{Discussion}
 
@@ -347,7 +359,7 @@ Across three datasets and a range of simulation scenarios, the same pattern emer
 Our results identify three regimes where $q$ \emph{is} distinguishable from frailty:
 \begin{enumerate}
 \item \textbf{Bounded support ($q<1$)}: frailty always produces an unbounded heavy tail, so a clear $\hat q<1$ (with estimated $T_{\max}$ below the observed range) is not confounded.
-\item \textbf{Very large samples ($n\gtrsim 5000$)}: the difference in hazard shape (q-Weibull peaks and declines; frailty declines monotonically) becomes detectable in the likelihood.
+\item \textbf{Larger samples}: under the configuration studied here, $n=5000$ substantially improves separation; the difference in hazard shape (q-Weibull peaks and declines; frailty declines monotonically) becomes detectable in the likelihood. This is not a universal threshold.
 \item \textbf{Clustered data}: shared frailty induces within-subject correlation (ICC $>0$), whereas the q-Weibull assumes independence.
 \end{enumerate}
 
